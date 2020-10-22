@@ -1,0 +1,15 @@
+@* IEnumerable para trabalhar com a lista de Funcionarios *@
+@model IEnumerable<aspnetcoreMVC.Models.Funcionario>
+
+<h2>Todos os funcionarios</h2>
+<a href="/Funcionarios/Cadastrar" class="btn btn-success">Novo funcionario</a>
+
+@foreach (var funcionario in Model)
+{
+    <p>Nome: @funcionario.Nome</p>
+    <p>Salário: @funcionario.Salario</p>
+    <p>Cpf: @funcionario.Cpf</p>
+    <a href="/Funcionarios/Editar/@funcionario.Id" class="btn btn-warning">Editar</a>
+    <a href="/Funcionarios/Deletar/@funcionario.Id" class="btn btn-danger">Deletar</a>
+    <hr>
+}
